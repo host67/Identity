@@ -8,7 +8,7 @@ $dbname = "identity";
 
 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+dd($pdo);
 /*
 try {
 
@@ -160,6 +160,12 @@ for ($i = 0; $i < 20; $i++) {
     $stmt = $pdo->prepare("INSERT INTO Surname (language_id, value, gender) VALUES (:language_id, :value, :gender)");
     $stmt->execute(['language_id' => $language_id, 'value' => $value, 'gender' => $gender]);
 }
+
+//$pdo = new \Src\migrations\Migration($db->pdo);
+function dd($arr) {
+    echo "<pre>" . print_r($arr, true) . "</pre>";
+}
+
 */
 
 echo "<pre>";
