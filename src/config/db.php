@@ -2,9 +2,9 @@
 namespace Src\config;
 
 class DB {
-    public $pdo;
+    public \PDO $pdo;
 
-    public function __construct($dbName, $user, $password) {
+    public function __construct(string $dbName, string $user, string $password) {
         $option = [
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
             \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,

@@ -27,7 +27,7 @@ $db = new \Src\config\DB('identity', 'root', '');
 //$tariffFixture->generate(6);
 
 $userFixture = new UserFixture();
-$userFixture->generate(100);
+$userFixture->generate(countItems: 100);
 
 ?>
 

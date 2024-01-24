@@ -3,7 +3,7 @@ namespace Src\Modules\User\Fixture;
 
 class UserFixture
 {
-    public function generate($countItems)
+    public function generate(int $countItems): void
     {
         $faker = \Faker\Factory::create();
         for ($i = 0; $i < $countItems; $i++) {
