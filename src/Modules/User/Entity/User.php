@@ -6,15 +6,15 @@ class User {
     private string $email;
     private string $password;
     private int $tariff_id;
-    private string $tariff_date_end;
+    private int $tariff_date_end;
     private string $token;
-    private string $created_at;
-    private string $updated_at;
-    private string $deleted_at;
+    private int $created_at;
+    private int $updated_at;
+    private int $deleted_at;
 
     private function __construct(
-        int $id, string $email, string $password, string $tariff_id, string $tariff_date_end,
-        string $token, string $created_at, string $updated_at, string $deleted_at)
+        int $id, string $email, string $password, int $tariff_id, int $tariff_date_end,
+        string $token, int $created_at, int $updated_at, int $deleted_at)
     {
         $this->id = $id;
         $this->email = $email;
@@ -28,15 +28,32 @@ class User {
     }
 
     public static function create(
-        int $id, string $email, string $password, string $tariff_id, string $tariff_date_end,
-        string $token, string $created_at, string $updated_at, string $deleted_at) :self
+        int $id,
+        string $email,
+        string $password,
+        int $tariff_id,
+        int $tariff_date_end,
+        string $token,
+        int $created_at,
+        int $updated_at,
+        int $deleted_at) :self
     {
-        return new self($id, $email, $password, $tariff_id, $tariff_date_end, $token, $created_at, $updated_at, $deleted_at);
+        return new self(
+            id: $id,
+            email: $email,
+            password: $password,
+            tariff_id: $tariff_id,
+            tariff_date_end: $tariff_date_end,
+            token: $token,
+            created_at: $created_at,
+            updated_at: $updated_at,
+            deleted_at: $deleted_at
+        );
     }
 
     public function edit(
-        int $id, string $email, string $password, string $tariff_id, string $tariff_date_end,
-        string $token, string $created_at, string $updated_at, string $deleted_at) :void
+        string $email, string $password, int $tariff_id, int $tariff_date_end,
+        string $token, int $created_at, int $updated_at, int $deleted_at) :void
     {
         $this->setEmail($email);
         $this->setPassword($password);
@@ -83,12 +100,12 @@ class User {
         $this->tariff_id = $tariff_id;
     }
 
-    public function getTariffDateEnd(): string
+    public function getTariffDateEnd(): int
     {
         return $this->tariff_date_end;
     }
 
-    public function setTariffDateEnd(string $tariff_date_end): void
+    public function setTariffDateEnd(int $tariff_date_end): void
     {
         $this->tariff_date_end = $tariff_date_end;
     }
@@ -103,32 +120,32 @@ class User {
         $this->token = $token;
     }
 
-    public function getCreatedAt(): string
+    public function getCreatedAt(): int
     {
         return $this->created_at;
     }
 
-    public function setCreatedAt(string $created_at): void
+    public function setCreatedAt(int $created_at): void
     {
         $this->created_at = $created_at;
     }
 
-    public function getUpdatedAt(): string
+    public function getUpdatedAt(): int
     {
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(string $updated_at): void
+    public function setUpdatedAt(int $updated_at): void
     {
         $this->updated_at = $updated_at;
     }
 
-    public function getDeletedAt(): string
+    public function getDeletedAt(): int
     {
         return $this->deleted_at;
     }
 
-    public function setDeletedAt(string $deleted_at): void
+    public function setDeletedAt(int $deleted_at): void
     {
         $this->deleted_at = $deleted_at;
     }

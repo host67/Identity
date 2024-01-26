@@ -1,5 +1,5 @@
 <?php
-namespace Src\config;
+namespace Config;
 
 class DB {
     public \PDO $pdo;

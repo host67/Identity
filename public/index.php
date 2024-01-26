@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
-use \Src\config\DB;
+use \Config\DB;
 use \Src\Modules\Identity\Fixture\IdentityFixture;
 use \Src\Modules\Language\Fixture\LanguageFixture;
 use \Src\Modules\Name\Fixture\NameFixture;
@@ -9,7 +9,7 @@ use \Src\Modules\Surname\Fixture\SurnameFixture;
 use \Src\Modules\Tariff\Fixture\TariffFixture;
 use \Src\Modules\User\Fixture\UserFixture;
 
-$db = new \Src\config\DB('identity', 'root', '');
+$db = new \Config\DB('identity', 'root', '');
 
 //$identityFixture = new IdentityFixture();
 //$identityFixture->generate(100);
